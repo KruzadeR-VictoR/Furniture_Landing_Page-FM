@@ -25,6 +25,8 @@ import {
 import React, { useEffect, useRef, useState } from "react";
 import left from "../public/icon-angle-left.svg";
 import right from "../public/icon-angle-right.svg";
+import darkImg from "./assets/image-about-dark.jpg";
+import lightImg from "./assets/image-about-light.jpg";
 import { Products } from "./Components/Products";
 import closeBtn from "./assets/icon-close.svg";
 
@@ -111,154 +113,160 @@ function Home() {
             gap="16"
             position="absolute"
             top={[12, 12]}
-            left={[0,0, 10]}
-            w={["full",'full', "auto"]}
+            left={[0, 0, 10]}
+            w={["full", "full", "auto"]}
             // bg="red"
             px="6"
-            py='1'            
-            justifyContent={["center","center", "left"]}
+            py="1"
+            justifyContent={["center", "center", "left"]}
           >
             {/* <Flex> */}
-              <Hide above="md">
-                <Box as="button" ref={btnRef} onClick={onOpen} position='absolute' left="6" >
-                  <Image src="../public/icon-hamburger.svg" />
-                </Box>
-                <Drawer
-                  placement="top"
-                  isOpen={isOpen}
-                  onClose={onClose}
-                  finalFocusRef={btnRef}
-                >
-                  <DrawerOverlay />
-                  <DrawerContent h="8rem">
-                    <DrawerBody bg="White" py="3" px="6">
-                      <Flex
-                        direction="row"
-                        align="center"
-                        justify="space-between"
-                        h="full"
-                        w="full"
-                        // bg="pink"
-                      >
-                        <Box onClick={onClose}>
-                          <Image src={closeBtn} />
-                        </Box>
-                        <Flex alignItems="right" gap="8">
-                          <Text
-                            as="a"
-                            href="#"
-                            sx={{
-                              textDecoration: "none",
-                              fontWeight: "extraBold",
-                            }}
-                            color="Black"
-                            position="relative"
-                            _before={beforeStyles}
-                            _hover={{ _before: { display: "block" } }}
-                          >
-                            home
-                          </Text>
-                          <Text
-                            as="a"
-                            href="#"
-                            sx={{
-                              textDecoration: "none",
-                              fontWeight: "extraBold",
-                            }}
-                            color="Black"
-                            position="relative"
-                            _before={beforeStyles}
-                            _hover={{ _before: { display: "block" } }}
-                          >
-                            shop
-                          </Text>
-                          <Text
-                            as="a"
-                            href="#"
-                            sx={{
-                              textDecoration: "none",
-                              fontWeight: "extraBold",
-                            }}
-                            color="Black"
-                            position="relative"
-                            _before={beforeStyles}
-                            _hover={{ _before: { display: "block" } }}
-                          >
-                            about
-                          </Text>
-                          <Text
-                            as="a"
-                            href="#"
-                            sx={{
-                              textDecoration: "none",
-                              fontWeight: "extraBold",
-                            }}
-                            color="Black"
-                            position="relative"
-                            _before={beforeStyles}
-                            _hover={{ _before: { display: "block" } }}
-                          >
-                            contact
-                          </Text>
-                        </Flex>
-                      </Flex>
-                    </DrawerBody>
-                  </DrawerContent>
-                </Drawer>
-              </Hide>
-
-              <Box as="button">
-                <Image src="/logo.svg" />
+            <Hide above="md">
+              <Box
+                as="button"
+                ref={btnRef}
+                onClick={onOpen}
+                position="absolute"
+                left="6"
+              >
+                <Image src="../public/icon-hamburger.svg" />
               </Box>
-              <Hide below="md">
-                <Flex alignItems="center" gap="8">
-                  <Text
-                    as="a"
-                    href="#"
-                    sx={{ textDecoration: "none" }}
-                    color="White"
-                    position="relative"
-                    _before={beforeStyles}
-                    _hover={{ _before: { display: "block" } }}
-                  >
-                    home
-                  </Text>
-                  <Text
-                    as="a"
-                    href="#"
-                    sx={{ textDecoration: "none" }}
-                    color="White"
-                    position="relative"
-                    _before={beforeStyles}
-                    _hover={{ _before: { display: "block" } }}
-                  >
-                    shop
-                  </Text>
-                  <Text
-                    as="a"
-                    href="#"
-                    sx={{ textDecoration: "none" }}
-                    color="White"
-                    position="relative"
-                    _before={beforeStyles}
-                    _hover={{ _before: { display: "block" } }}
-                  >
-                    about
-                  </Text>
-                  <Text
-                    as="a"
-                    href="#"
-                    sx={{ textDecoration: "none" }}
-                    color="White"
-                    position="relative"
-                    _before={beforeStyles}
-                    _hover={{ _before: { display: "block" } }}
-                  >
-                    contact
-                  </Text>
-                </Flex>
-              </Hide>
-            </Flex>
+              <Drawer
+                placement="top"
+                isOpen={isOpen}
+                onClose={onClose}
+                finalFocusRef={btnRef}
+              >
+                <DrawerOverlay />
+                <DrawerContent h="8rem">
+                  <DrawerBody bg="White" py="3" px="6">
+                    <Flex
+                      direction="row"
+                      align="center"
+                      justify="space-between"
+                      h="full"
+                      w="full"
+                      // bg="pink"
+                    >
+                      <Box onClick={onClose}>
+                        <Image src={closeBtn} />
+                      </Box>
+                      <Flex alignItems="right" gap="8">
+                        <Text
+                          as="a"
+                          href="#"
+                          sx={{
+                            textDecoration: "none",
+                            fontWeight: "extraBold",
+                          }}
+                          color="Black"
+                          position="relative"
+                          _before={beforeStyles}
+                          _hover={{ _before: { display: "block" } }}
+                        >
+                          home
+                        </Text>
+                        <Text
+                          as="a"
+                          href="#"
+                          sx={{
+                            textDecoration: "none",
+                            fontWeight: "extraBold",
+                          }}
+                          color="Black"
+                          position="relative"
+                          _before={beforeStyles}
+                          _hover={{ _before: { display: "block" } }}
+                        >
+                          shop
+                        </Text>
+                        <Text
+                          as="a"
+                          href="#"
+                          sx={{
+                            textDecoration: "none",
+                            fontWeight: "extraBold",
+                          }}
+                          color="Black"
+                          position="relative"
+                          _before={beforeStyles}
+                          _hover={{ _before: { display: "block" } }}
+                        >
+                          about
+                        </Text>
+                        <Text
+                          as="a"
+                          href="#"
+                          sx={{
+                            textDecoration: "none",
+                            fontWeight: "extraBold",
+                          }}
+                          color="Black"
+                          position="relative"
+                          _before={beforeStyles}
+                          _hover={{ _before: { display: "block" } }}
+                        >
+                          contact
+                        </Text>
+                      </Flex>
+                    </Flex>
+                  </DrawerBody>
+                </DrawerContent>
+              </Drawer>
+            </Hide>
+
+            <Box as="button">
+              <Image src="/logo.svg" />
+            </Box>
+            <Hide below="md">
+              <Flex alignItems="center" gap="8">
+                <Text
+                  as="a"
+                  href="#"
+                  sx={{ textDecoration: "none" }}
+                  color="White"
+                  position="relative"
+                  _before={beforeStyles}
+                  _hover={{ _before: { display: "block" } }}
+                >
+                  home
+                </Text>
+                <Text
+                  as="a"
+                  href="#"
+                  sx={{ textDecoration: "none" }}
+                  color="White"
+                  position="relative"
+                  _before={beforeStyles}
+                  _hover={{ _before: { display: "block" } }}
+                >
+                  shop
+                </Text>
+                <Text
+                  as="a"
+                  href="#"
+                  sx={{ textDecoration: "none" }}
+                  color="White"
+                  position="relative"
+                  _before={beforeStyles}
+                  _hover={{ _before: { display: "block" } }}
+                >
+                  about
+                </Text>
+                <Text
+                  as="a"
+                  href="#"
+                  sx={{ textDecoration: "none" }}
+                  color="White"
+                  position="relative"
+                  _before={beforeStyles}
+                  _hover={{ _before: { display: "block" } }}
+                >
+                  contact
+                </Text>
+              </Flex>
+            </Hide>
+          </Flex>
           {/* </Flex> */}
 
           {/* Content  */}
@@ -418,7 +426,7 @@ function Home() {
         >
           <Image
             h="full"
-            src="../public/image-about-dark.jpg"
+            src={darkImg}
             objectFit="cover"
             objectPosition="center"
           />
@@ -451,7 +459,7 @@ function Home() {
         >
           <Image
             h="full"
-            src="../public/image-about-light.jpg"
+            src={lightImg}
             objectFit="cover"
             objectPosition="center"
           />
