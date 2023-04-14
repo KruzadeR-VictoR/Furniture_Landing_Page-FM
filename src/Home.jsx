@@ -25,6 +25,7 @@ import {
 import React, { useEffect, useRef, useState } from "react";
 import left from "../public/icon-angle-left.svg";
 import right from "../public/icon-angle-right.svg";
+import hamburgerIcon from './assets/icon-hamburger.svg'
 import darkImg from "./assets/image-about-dark.jpg";
 import lightImg from "./assets/image-about-light.jpg";
 import { Products } from "./Components/Products";
@@ -129,7 +130,7 @@ function Home() {
                 position="absolute"
                 left="6"
               >
-                <Image src="../public/icon-hamburger.svg" />
+                <Image src={hamburgerIcon} alt="logo" />
               </Box>
               <Drawer
                 placement="top"
