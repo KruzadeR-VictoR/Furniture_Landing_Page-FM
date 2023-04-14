@@ -24,6 +24,20 @@ function App() {
       xl: "80em",
       "2xl": "96em",
     },
+    layerStyles: {
+      // naLink: {
+      //   content: '""',
+      //   width: "50%",
+      //   height: "2px",
+      //   background: "White",
+      //   position: "absolute",
+      //   bottom: "-2",
+      //   left: "50%",
+      //   translate: "-50% 0",
+      //   transition: "all .5s easeIn",
+      //   display: "none",
+      // },
+    },
   });
 
   return (
