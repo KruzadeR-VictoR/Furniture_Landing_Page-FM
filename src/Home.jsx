@@ -3,8 +3,7 @@ import {
   Button,
   ButtonGroup,
   Drawer,
-  DrawerBody,
-  DrawerCloseButton,
+  DrawerBody,  
   DrawerContent,
   DrawerOverlay,
   Flex,
@@ -13,11 +12,8 @@ import {
   HStack,
   Heading,
   Hide,
-  Icon,
-  IconButton,
-  Image,
-  Link,
-  Show,
+  Icon,  
+  Image,    
   Text,
   VStack,
   useDisclosure,
@@ -88,9 +84,9 @@ function Home() {
       // x: 0,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.3,
+        staggerChildren: 0.1,
         type: "spring",
-        delay: 0.5,
+        delay: 0.1,
         duration: 1,
       },
     },
@@ -106,11 +102,19 @@ function Home() {
       // scale: 1,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.5,
+        staggerChildren: 0.1,
         type: "tween",
         // delay: 0.5,
         duration: 0.2,
       },
+    },
+  };
+  const imageVar = {
+    hidden: { x: -100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { type: "spring", duration: 0.5 },
     },
   };
 
@@ -330,17 +334,25 @@ function Home() {
                       key={product.id}
                       direction={["column", "column", "row"]}
                       // variants={parent}
+                      // bg="red"
+                      flex="1"
                     >
                       <Box flexBasis="55%">
                         <Hide below="md">
                           <Image
+                            as={motion.img}
+                            variants={imageVar}
+                            initial="hidden"
+                            animate="visible"
                             w="full"
-                            h="full"
+                            // h="full"
+                            h="30rem"
                             // src="/desktop-image-hero-1.jpg"
                             src={product.desktopImg}
                             // src={{base:`${product.desktopImg}`,md:`${product.desktopImg}`}}
                             objectFit="cover"
                             objectPosition="center"
+                            // fallbackSrc='https://via.placeholder.com/150'
                             // bg="teal"
                           />
                         </Hide>
@@ -353,6 +365,7 @@ function Home() {
                             // src={{base:`${product.desktopImg}`,md:`${product.desktopImg}`}}
                             objectFit="cover"
                             objectPosition="center"
+                            // fallbackSrc='https://via.placeholder.com/150'
                             // bg="teal"
                           />
                         </Hide>
