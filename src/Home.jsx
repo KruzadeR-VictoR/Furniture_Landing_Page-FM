@@ -3,7 +3,7 @@ import {
   Button,
   ButtonGroup,
   Drawer,
-  DrawerBody,  
+  DrawerBody,
   DrawerContent,
   DrawerOverlay,
   Flex,
@@ -12,8 +12,8 @@ import {
   HStack,
   Heading,
   Hide,
-  Icon,  
-  Image,    
+  Icon,
+  Image,
   Text,
   VStack,
   useDisclosure,
@@ -27,16 +27,8 @@ import lightImg from "./assets/image-about-light.jpg";
 import { Products } from "./Components/Products";
 import closeBtn from "./assets/icon-close.svg";
 
-// Slider
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 // framer motion
 import { motion } from "framer-motion";
-// import Animation from "./Animations/Animation";
-
-// import Slider from "react-slick";
-import Slider from "react-slick";
 
 function Home() {
   const beforeStyles = {
@@ -55,16 +47,6 @@ function Home() {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
-  const slideRef = useRef();
-  // Slider Config
-
-  const settings = {
-    dots: "true",
-    infinite: "true",
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
   useEffect(() => {
     // console.log(current);
@@ -157,7 +139,6 @@ function Home() {
         variants={Card}
         initial="hidden"
         animate="visible"
-        // border="1px solid #ccc"
         // boxShadow='3xl'
       >
         <GridItem colSpan={5} rowSpan={2} position="relative">
@@ -270,8 +251,8 @@ function Home() {
               </Drawer>
             </Hide>
 
-            <Box as="button">
-              <Image src="/logo.svg" />
+            <Box as="button" aria-label="Brand_Logo">
+              <Image src="/logo.svg" alt="logo" w="full" h="full" />
             </Box>
             <Hide below="md">
               <Flex alignItems="center" gap="8">
@@ -333,7 +314,6 @@ function Home() {
                     <Flex
                       key={product.id}
                       direction={["column", "column", "row"]}
-                      // variants={parent}
                       // bg="red"
                       flex="1"
                     >
@@ -344,29 +324,24 @@ function Home() {
                             variants={imageVar}
                             initial="hidden"
                             animate="visible"
-                            w="full"
+                            // w="full"
+                            w="45rem"
                             // h="full"
                             h="30rem"
-                            // src="/desktop-image-hero-1.jpg"
                             src={product.desktopImg}
-                            // src={{base:`${product.desktopImg}`,md:`${product.desktopImg}`}}
                             objectFit="cover"
                             objectPosition="center"
-                            // fallbackSrc='https://via.placeholder.com/150'
-                            // bg="teal"
+                            alt="carousel image"
                           />
                         </Hide>
                         <Hide above="md">
                           <Image
                             w="full"
                             h="full"
-                            // src="/desktop-image-hero-1.jpg"
                             src={product.mobileImg}
-                            // src={{base:`${product.desktopImg}`,md:`${product.desktopImg}`}}
                             objectFit="cover"
                             objectPosition="center"
-                            // fallbackSrc='https://via.placeholder.com/150'
-                            // bg="teal"
+                            alt="carousel image"
                           />
                         </Hide>
                       </Box>
@@ -377,7 +352,7 @@ function Home() {
                         px={{ base: "2rem", md: "5rem" }}
                         pb={["3rem", 0]}
                         spacing={5}
-                        bg="white"
+                        bg="White"
                         alignItems="start"
                         variants={parentVariant}
                         initial="hidden"
@@ -455,9 +430,6 @@ function Home() {
             left={["auto", "61%"]}
             transform={["translate(0,-60%)", "translate(-54%)"]}
             h="4.5rem"
-            // bg="teal"
-            // aspectRatio="square"
-            // sx={{ aspectRatio: "1" }}
           >
             <Button
               h="full"
@@ -468,10 +440,11 @@ function Home() {
               sx={{ aspectRatio: "1" }}
               bg="Black"
               rounded="none"
+              aria-label="carousel_ctrl_left"
               _hover={{ background: "VeryDarkGray" }}
               onClick={() => setcurrent(current - 1)}
             >
-              <Image src={left} />
+              <Image src={left} alt="carousel left button" w="2em" h="2em" />
             </Button>
             <Button
               isDisabled={current >= 2}
@@ -482,24 +455,14 @@ function Home() {
               sx={{ aspectRatio: "1" }}
               bg="Black"
               rounded="none"
+              aria-label="carousel_ctrl_right"
               _hover={{ background: "VeryDarkGray" }}
               onClick={() => setcurrent(current + 1)}
             >
-              <Image src={right} />
+              <Image src={right} alt="carousel right button" w="2em" h="2em" />
             </Button>
-            {/* <IconButton bg='red' aria-label="previous slide" icon={left} /> */}
           </ButtonGroup>
         </GridItem>
-        {/* <GridItem colSpan={1} p="5" bg="teal">
-          <Heading>Discover innovative ways to decorate</Heading>
-          <Text>
-            We provide unmatched quality, comfort, and style for property owners
-            across the country. Our experts combine form and function in
-            bringing your vision to life. Create a room in your own style with
-            our collection and make your property a reflection of you and what
-            you love.
-          </Text>
-        </GridItem> */}
         <GridItem
           as={motion.div}
           colSpan={{ base: "5", md: "1" }}
@@ -507,16 +470,18 @@ function Home() {
           variants={item}
         >
           <Image
+            w="full"
             h="full"
             src={darkImg}
             objectFit="cover"
             objectPosition="center"
+            alt="dark image"
           />
         </GridItem>
         <GridItem
           as={motion.div}
           colSpan={{ base: "5", md: "3" }}
-          bg="white"
+          bg="White"
           py="12"
           px={[8, 12]}
           variants={item}
@@ -544,10 +509,12 @@ function Home() {
           variants={item}
         >
           <Image
+            w="full"
             h="full"
             src={lightImg}
             objectFit="cover"
             objectPosition="center"
+            alt="light image"
           />
         </GridItem>
       </Grid>
@@ -556,5 +523,3 @@ function Home() {
 }
 
 export default Home;
-
-// onClick={() => slideRef.current.slickNext()}

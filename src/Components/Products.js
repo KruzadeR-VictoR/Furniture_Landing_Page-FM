@@ -1,3 +1,7 @@
+// import React from "react";
+// export const d_img1 = React.lazy(() =>
+//   import("../assets/desktop-image-hero-1.jpg")
+// );
 import d_img1 from "../assets/desktop-image-hero-1.jpg";
 import d_img2 from "../assets/desktop-image-hero-2.jpg";
 import d_img3 from "../assets/desktop-image-hero-3.jpg";
