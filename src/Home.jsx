@@ -337,7 +337,9 @@ function Home() {
                         <Hide above="md">
                           <Image
                             w="full"
-                            h="full"
+                            // w="full"
+                            // h="full"
+                            h="24.72rem"
                             src={product.mobileImg}
                             objectFit="cover"
                             objectPosition="center"
